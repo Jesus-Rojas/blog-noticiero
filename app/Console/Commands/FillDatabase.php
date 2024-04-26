@@ -16,10 +16,12 @@ class FillDatabase extends Command
     $news = $this->getNews();
     $amountNews = count($news);
     $users = $amountNews ? $this->getRandomUsers($amountNews) : [];
-    // foreach ($news as $newIndex => $new) {
-      
-    // }
-    logger(News::all());
+    foreach ($news as $newIndex => $new) {
+      News::create([
+        ...$new,
+        'author' => $users[$newIndex],
+      ]);
+    }
   }
 
   public function getNews()
@@ -31,9 +33,9 @@ class FillDatabase extends Command
       $news = collect($data['articles'])
         ->map(fn ($article) => ([
           'publishedAt' => $article['publishedAt'],
-          'description' => $article['description'],
+          'description' => $article['description'] ?? '',
           'title' => $article['title'],
-          'urlImage' => $article['urlToImage'],
+          'urlImage' => $article['urlToImage'] ?? '',
         ]))
         ->values();
     } catch (\Throwable $th) {
