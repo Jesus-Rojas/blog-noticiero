@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\News;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
 
@@ -18,7 +19,7 @@ class FillDatabase extends Command
     // foreach ($news as $newIndex => $new) {
       
     // }
-    logger($users);
+    logger(News::all());
   }
 
   public function getNews()
