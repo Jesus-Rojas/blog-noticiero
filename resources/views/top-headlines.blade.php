@@ -3,7 +3,9 @@
 @section('title', __('Top Headlines'))
 
 @section('content')
-  <h1>From Top Headlines</h1>
+  <section class="px-2 pt-5">
+    <h1 class="text-center">From Top Headlines</h1>
 
-  @livewire(News::class)
+    @livewire(News::class)
+  </section>
 @endsection

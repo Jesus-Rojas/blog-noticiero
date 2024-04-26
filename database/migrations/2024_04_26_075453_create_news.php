@@ -10,7 +10,6 @@ return new class extends Migration
   {
     Schema::create('news', function (Blueprint $table) {
       $table->id();
-      $table->string('publishedAt');
       $table->string('title');
       $table->string('author');
       $table->string('urlImage');

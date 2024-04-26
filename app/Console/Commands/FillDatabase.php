@@ -30,12 +30,12 @@ class FillDatabase extends Command
     try {
       $apiKey = env('API_NEWS_KEY');
       $data = Http::get(env('API_NEWS') . "?apiKey=$apiKey&country=us")->json();
+      $imageDefault = 'https://static.vecteezy.com/system/resources/previews/005/337/799/non_2x/icon-image-not-found-free-vector.jpg';
       $news = collect($data['articles'])
         ->map(fn ($article) => ([
-          'publishedAt' => $article['publishedAt'],
           'description' => $article['description'] ?? '',
           'title' => $article['title'],
-          'urlImage' => $article['urlToImage'] ?? '',
+          'urlImage' => $article['urlToImage'] ?? $imageDefault,
         ]))
         ->values();
     } catch (\Throwable $th) {
