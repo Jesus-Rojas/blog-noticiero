@@ -10,9 +10,9 @@ return new class extends Migration
   {
     Schema::create('news', function (Blueprint $table) {
       $table->id();
-      $table->string('title');
+      $table->text('title');
       $table->string('author');
-      $table->string('urlImage');
+      $table->text('urlImage');
       $table->text('description');
       $table->timestamps();
     });

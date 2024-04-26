@@ -1,8 +1,9 @@
-import { useNews } from "../hooks/use-news";
-import styles from "./news.module.scss";
+import { useNews } from "../../hooks/use-news";
+import { PaginationComponent } from "../pagination/pagination-component";
+import styles from "./news-component.module.scss";
 
-export function News() {
-  const { news: articles } = useNews();
+export function NewsComponent() {
+  const { news: articles, newsPagination, getDataOfPage } = useNews();
 
   return (
     <div className={styles['container-custom']}>
@@ -23,9 +24,12 @@ export function News() {
         ))}
       </div>
 
-      {/* @if ($news->hasPages())
-        {{ $news->links('vendor.livewire.bootstrap') }}
-      @endif */}
+      {newsPagination && (
+        <PaginationComponent
+          pagination={newsPagination}
+          getDataOfPage={getDataOfPage}
+        />
+      )}
     </div>
   );
 }
