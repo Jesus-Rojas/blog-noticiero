@@ -10,6 +10,7 @@
         "@types/react-dom": "^18.3.0",
         "axios": "^1.6.4",
         "laravel-vite-plugin": "^1.0.0",
+        "sass": "^1.75.0",
         "typescript": "^5.4.5",
         "vite": "^5.0.0"
     },
