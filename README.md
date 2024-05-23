@@ -14,6 +14,10 @@ API_NEWS_KEY=xxxxxxxxxxxxxxxxxxxxxxxxx
 API_NEWS=https://newsapi.org/v2/top-headlines
 API_RANDOM_USER=https://randomuser.me/api
 APP_URL=http://127.0.0.1:8000
+APP_URL=http://127.0.0.1:8000
+APP_URL=http://127.0.0.1:8000
+APP_URL=http://127.0.0.1:8000
+APP_URL=http://127.0.0.1:8000
 ```
 
 ## Installation
